@@ -5,7 +5,7 @@ export interface IToken {
     user: Types.ObjectId;
 }
 
-const TokenSchema = new Schema<IToken>({
+const TokenSchema: Schema = new Schema<IToken>({
     refreshToken: {type: String, required: true},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
 })

@@ -6,5 +6,6 @@ const UserSchema = new mongoose_1.Schema({
     password: { type: String, required: true },
     isActiveted: { type: Boolean, default: false },
     activationLink: { type: String },
+    createdAt: Date,
 });
 exports.default = (0, mongoose_1.model)("User", UserSchema);
