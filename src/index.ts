@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import mongoose, { ConnectOptions } from "mongoose";
 import authRouter from './routers/authRouter'
+import errorMiddleware from './middlewares/errorMiddleware'
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 app.use('/api', authRouter)
+app.use(errorMiddleware)
 
 app.get("/", (req, res) => {
   res.send("APP IS RUNNING");
